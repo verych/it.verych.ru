@@ -1,0 +1,146 @@
+﻿<html>
+  <head>
+    <title>Справочник IT компаний. Всё о поиске работы для программистов в Таганроге</title>
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type">
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <link type="text/css" rel="stylesheet" href="themes/sorter/blue/style.css"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js""></script> 
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="code.js"></script>
+    <script type="text/javascript" src="galleria-1.2.2.js"></script>
+    <script type="text/javascript" src="jquery.tablesorter.min.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-42850927-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+	<link rel="stylesheet" href="reveal.css">	
+	<script type="text/javascript" src="jquery.reveal.js"></script>
+  </head>
+  <body>
+    <div class="adder">
+        <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+            <a class="addthis_button_vk"></a>
+            <a class="addthis_button_odnoklassniki_ru"></a>
+            <a class="addthis_button_google_plusone_share"></a>
+            <a class="addthis_button_facebook"></a>
+            <a class="addthis_button_twitter"></a>
+            <a class="addthis_button_livejournal"></a>
+            <a class="addthis_button_digg"></a>
+            <a class="addthis_button_mymailru"></a>
+        </div>
+    </div>
+    <script type="text/javascript">var addthis_config = { "data_track_addressbar": true };</script>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51f8f00354e29ca4"></script>
+
+        <div class="logo">
+            <h1>Справочник IT компаний</h1>
+            <h2>Всё о поиске работы для программистов в Таганроге</h2>
+        </div>
+        <div id="filterContainer">
+            <div id="salaryFilter">
+                <label>Зарплата от</label>
+                <select id="salary" onchange="showFirmsList();">
+                    <option value="all" selected="selected">любая</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="35">35</option>
+                    <option value="40">40</option>
+                    <option value="45">45</option>
+                    <option value="50">50</option>
+                    <option value="55">55</option>
+                    <option value="60">60</option>
+                    <option value="65">65</option>
+                    <option value="70">70</option>
+                    <option value="75">75</option>
+                </select>
+            </div>
+            <div id="languageFilter">
+                <label>Языки\платформы</label>
+                <select id="directions" onchange="showFirmsList();">
+                    <option value="all" selected="selected">любые</option>
+                    <option value="PHP">PHP</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Java">Java</option>
+                    <option value="ASP.Net">ASP.Net</option>
+                    <option value="C#">C#</option>
+                    <option value="ComputerVision">ComputerVision</option>
+                    <option value="C++">C++</option>
+                    <option value="Mobile">Mobile</option>
+                    <option value="iOS">iOS</option>
+                    <option value="Android">Android</option>
+                    <option value="Delphi">Delphi</option>                    
+                    <option value="SQL">SQL</option>
+                    <option value="Oracle">Oracle</option>                    
+                    <option value="ActionScript">ActionScript</option>
+                    <option value="1C">1C</option>
+                    <option value="RubyOnRails">RubyOnRails</option>
+                    <option value="Testing">Testing</option>
+                    <option value="Верстка">Верстка</option>
+                    <option value="Design">Design</option>
+                </select>
+            </div>
+            <div id="districtFilter">
+                <label>Район</label>
+                <select id="district" onchange="showFirmsList();">
+                    <option value="all" selected="selected">любой</option>
+                    <option value="Центр">Центр</option>
+                    <option value="Русское поле Западный">Русское поле Западный</option>
+                    <option value="Новый вокзал Северный">Новый вокзал Северный</option>
+                    <option value="Свобода">Свобода</option>
+                </select>
+            </div>
+            <div id="vacancyActualityFilter">
+                <label>Актуальность вакансий</label>
+                <select id="vacancyActuality" onchange="showFirmsList();">
+                    <option value="all" selected="selected">любая</option>
+                    <option value="Год">Год</option>
+                    <option value="3 месяца">3 месяца</option>
+                    <option value="Месяц">Месяц</option>
+                    <option value="Неделя">Неделя</option>
+                </select>
+            </div>
+        </div>
+    <div id="topPanel">
+        <div class="clear"></div>
+        <div id="dataListContainer">
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="bottomPanel">
+        <div id="dataDetailsContainer" class="reveal-modal">
+            <div id="bottomLeft">
+                <h1 id="firmname"></h1>
+                <img id="firmlogo" class="" />
+                <div id="educationCenter"></div>
+            </div>
+            <div id="bottomMiddle">
+                <div id="advantages"></div>
+                <div id="videos"></div>
+            </div>
+            <div id="bottomRight">
+                <h2>Вакансии</h2>
+                <div id="vacancies"></div>
+            </div>
+            <div id="gallery"></div>
+        </div>
+        <div class="clear"></div>
+        <br />
+        
+    </div>
+    <div class="clear"></div>
+    <br />
+    Пожелания, замечания, предложения и уточнения присылайте на <a href="mailto:TaganCoding@yandex.ru">TaganCoding@yandex.ru</a> или <a href="mailto:it@verych.ru">it@verych.ru</a>.
+    Обновлено 31 июля 23:00. Добавлены ООО Крайт и НИИ Связи. Удалены неактуальные ссылки.
+  </body>
+</html>
